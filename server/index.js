@@ -14,8 +14,9 @@ app.use(bodyParser.json());
 
 app.get('/api/event/:eventid', (req, res) => {
   const eventId = `${req.params.eventid}`;
-  Model.Suggestions.findOne({ id: eventId })
+  Model.Suggestions.find({ category: 'Animals' })
     .select('-_id')
+    .limit(5)
     .then((data) => {
       res.send(data);
     });

@@ -7,12 +7,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      title: '',
-      photo: '',
-      category: '',
-      location: '',
-      time: ''
-    };
+      events: []
+    }
   }
 
   componentDidMount() {
@@ -26,11 +22,8 @@ class App extends React.Component {
 
     axios.get(`/api/event/${eventId}`)
       .then((res) => {
-        this.setState({ title: res.data.title });
-        this.setState({ photo: res.data.photo });
-        this.setState({ category: res.data.category });
-        this.setState({ location: res.data.location });
-        this.setState({ time: res.data.time });
+        this.setState({ events: res.data });
+        console.log(this.state.events)
       })
       .catch((err) => {
         console.log(err);
