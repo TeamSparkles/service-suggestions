@@ -7,10 +7,14 @@ class SuggestionsList extends React.Component {
   }
 
   render() {
+    var output = [];
+    for (var i = 0; i < this.props.events.length; i++) {
+      output.push(<SuggestionItem event={this.props.events[i]} key={i}/>)
+    }
     return (
       <div>
         <div>SuggestionsList</div>
-        <SuggestionItem />
+        {output}
       </div>
     )
   }

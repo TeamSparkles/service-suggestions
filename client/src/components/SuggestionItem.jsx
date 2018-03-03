@@ -7,7 +7,7 @@ class SuggestionItem extends React.Component {
 
   render() {
     return (
-      <div>SuggestionItem</div>
+      <div>{JSON.stringify(this.props.event)}</div>
     )
   }
 }
