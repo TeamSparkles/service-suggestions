@@ -14,12 +14,22 @@ app.use(bodyParser.json());
 
 app.get('/api/event/:eventid', (req, res) => {
   const eventId = `${req.params.eventid}`;
-  Model.Suggestions.find({ category: 'Animals' })
-    .select('-_id')
-    .limit(5)
+  Model.Suggestions.findOne({ id: eventId })
+    .select('category -_id')
     .then((data) => {
       res.send(data);
     });
 });
+
+app.get('/suggestions', (req, res) => {
+  const category = `${req.query.category}`;
+  Model.Suggestions.find({ category: category })
+    .select('-_id')
+    .limit(8)
+    .then((data) => {
+      res.send(data);
+    });
+});
+
 
 module.exports = app;

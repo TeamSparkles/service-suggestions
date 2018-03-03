@@ -7,23 +7,38 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      category: '',
       events: []
     }
   }
 
   componentDidMount() {
-    this.getSuggestions();
+    this.getCategory();
   }
 
-  getSuggestions() {
+  getCategory() {
     const url = window.location.href;
     const urlEnd = url.split('/event/')[1];
     const eventId = urlEnd.split('/')[0];
 
     axios.get(`/api/event/${eventId}`)
       .then((res) => {
+        this.setState({category: res.data.category })
+        this.getSuggestions();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  getSuggestions() {
+    axios.get('/suggestions', {
+        params: {
+          category: this.state.category
+        }
+      })
+      .then((res) => {
         this.setState({ events: res.data });
-        console.log(this.state.events)
       })
       .catch((err) => {
         console.log(err);
