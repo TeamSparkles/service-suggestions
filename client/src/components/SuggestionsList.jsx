@@ -24,9 +24,7 @@ class SuggestionsList extends React.Component {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: false
+          slidesToScroll: 1
         }
       },
       {
