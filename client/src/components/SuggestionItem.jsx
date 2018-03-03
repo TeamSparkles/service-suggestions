@@ -6,8 +6,15 @@ class SuggestionItem extends React.Component {
   }
 
   render() {
+    console.log
     return (
-      <div>{JSON.stringify(this.props.event)}</div>
+      <div>
+        <img src={this.props.event.photo} height={100} width={100}></img>
+        <div>{this.props.event.title}</div>
+        <div>{this.props.event.time}</div>
+        <div>{this.props.event.location}</div>
+        <div>{this.props.event.category}</div>
+      </div>
     )
   }
 }

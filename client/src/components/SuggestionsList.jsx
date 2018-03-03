@@ -13,7 +13,7 @@ class SuggestionsList extends React.Component {
     }
     return (
       <div>
-        <div>SuggestionsList</div>
+        <div><b>Similar Events</b></div>
         {output}
       </div>
     )
