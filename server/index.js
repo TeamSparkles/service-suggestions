@@ -23,7 +23,8 @@ app.get('/api/event/:eventid', (req, res) => {
 
 app.get('/suggestions', (req, res) => {
   const category = `${req.query.category}`;
-  Model.Suggestions.find({ category: category })
+  const id = `${req.query.id}`;
+  Model.Suggestions.find({ category: category, id: {$ne: id} })
     .select('-_id')
     .limit(8)
     .then((data) => {

@@ -7,6 +7,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      id: '',
       category: '',
       events: []
     }
@@ -23,7 +24,7 @@ class App extends React.Component {
 
     axios.get(`/api/event/${eventId}`)
       .then((res) => {
-        this.setState({category: res.data.category })
+        this.setState({category: res.data.category, id: eventId })
         this.getSuggestions();
       })
       .catch((err) => {
@@ -34,6 +35,7 @@ class App extends React.Component {
   getSuggestions() {
     axios.get('/suggestions', {
         params: {
+          id: this.state.id,
           category: this.state.category
         }
       })
