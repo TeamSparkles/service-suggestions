@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": 1,
+    "jest": true,
+  },
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "foo": true,
+    "window": true
+  }
+}
