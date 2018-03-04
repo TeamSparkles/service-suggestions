@@ -1,0 +1,31 @@
+.slick-initialized,
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-next:before, 
+.slick-prev:before {
+  color: grey;
+  opacity: 1;
+  font-size: 45px;
+}
+
+.slick-next.slick-disabled:before,
+.slick-prev.slick-disabled:before {
+  opacity: 0;
+}
+
+.slick-next,
+.slick-prev {
+  top: 79px;
+}
+
+.slick-prev {
+  left: -15px;
+  z-index: 1000;
+}
+
+.slick-next {
+  right: 10px;
+}
