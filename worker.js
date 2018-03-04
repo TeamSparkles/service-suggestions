@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const data = require('./database/seed_data/data.json');
 const photodata = require('./database/seed_data/mock_photo_data.json');
-const Model = require('./database//models/suggestions.js');
+const Model = require('./database/models/suggestions.js');
 
 mongoose.connect('mongodb://localhost/meetup_suggestions');
 
