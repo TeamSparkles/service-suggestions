@@ -1,7 +1,64 @@
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  font-weight: 600!important;
+  display: inline;
+}
+
+body {
+  max-width: 600px;
+}
+
+.event-suggestions-container {
+  background: #f6f7f8;
+  color: #2e3e48;
+  font-family: Graphik Meetup,-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga","kern";
+  max-width: 600px;
+}
+
+.event-suggestion-container {
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+.event-photo {
+  width: 250px;
+  cursor: pointer;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 4px;
+  max-width: 250px;
+  cursor: pointer;
+}
+
+.event-time {
+  font-size: 12px;
+}
+
+.event-location {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.event-category {
+  font-size: 12px;
+}
+
 .slick-initialized,
 .slick-slide {
   display: flex;
   justify-content: center;
+}
+
+.slick-slider {
+  width: 600px;
+  height: 280px;
 }
 
 .slick-next:before, 
@@ -14,11 +71,13 @@
 .slick-next.slick-disabled:before,
 .slick-prev.slick-disabled:before {
   opacity: 0;
+  cursor: default;
 }
 
 .slick-next,
 .slick-prev {
-  top: 79px;
+  top: 100px;
+  opacity: .5;
 }
 
 .slick-prev {

@@ -50,7 +50,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="event-suggestions-container">
+        <div><h3>More Events</h3></div>
         <SuggestionsList events={this.state.events}/>
       </div>
     );
