@@ -59,4 +59,3 @@ class App extends React.Component {
 }
 
 window.Suggestions = App;
-ReactDOM.render(<App />, document.getElementById('app'));
