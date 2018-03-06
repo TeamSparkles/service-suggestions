@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import SuggestionItem from './SuggestionItem.jsx'
+import SuggestionItem from './SuggestionItem.jsx';
 
 class SuggestionsList extends React.Component {
   constructor(props) {

@@ -19,6 +19,7 @@
     "axios": "^0.18.0",
     "babel-jest": "^22.4.1",
     "body-parser": "^1.18.2",
+    "css-loader": "^0.28.10",
     "express": "^4.15.0",
     "html-react-parser": "^0.4.2",
     "jest": "^22.4.2",
@@ -35,6 +36,7 @@
     "react-test-renderer": "^16.2.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.2",
+    "style-loader": "^0.20.2",
     "webpack-hot-middleware": "^2.21.0"
   },
   "devDependencies": {
@@ -51,6 +53,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^2.1.2",
     "react-addons-test-utils": "^15.6.2",
     "supertest": "^3.0.0",
     "webpack": "^2.2.1",
