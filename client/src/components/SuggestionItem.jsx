@@ -11,12 +11,12 @@ class SuggestionItem extends React.Component {
     var title = this.props.event.title.length > 55 ? this.props.event.title.substring(0,55) + '...' : this.props.event.title;
     var category = this.props.event.category.toLowerCase();
     return (
-      <div className="event-suggestion-container">
-        <div className="event-photo"><img src={this.props.event.photo} height={140.63} width={250}></img></div>
-        <div className="event-title">{title}</div>
-        <div className="event-time">{time}</div>
-        <div className="event-location">{this.props.event.location}</div>
-        <div className="event-category">#{category}</div>
+      <div className="eventSuggestionContainer">
+        <div className="eventPhoto"><img src={this.props.event.photo} height={140.63} width={250}></img></div>
+        <div className="eventTitle">{title}</div>
+        <div className="eventTime">{time}</div>
+        <div className="eventLocation">{this.props.event.location}</div>
+        <div className="eventCategory">#{category}</div>
       </div>
     )
   }

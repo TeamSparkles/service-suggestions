@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import SuggestionsList from './components/SuggestionsList.jsx'
+import styles from './styles/styles.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="event-suggestions-container">
+      <div className="eventSuggestionsContainer">
         <div><h3>More Events</h3></div>
         <SuggestionsList events={this.state.events}/>
       </div>
