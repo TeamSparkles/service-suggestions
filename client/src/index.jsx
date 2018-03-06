@@ -23,7 +23,7 @@ class App extends React.Component {
     const urlEnd = url.split('/event/')[1];
     const eventId = urlEnd.split('/')[0];
 
-    axios.get(`/api/event/${eventId}`)
+    axios.get(`http://localhost:4001/api/event/${eventId}`)
       .then((res) => {
         this.setState({category: res.data.category, id: eventId })
         this.getSuggestions();
@@ -34,7 +34,7 @@ class App extends React.Component {
   }
 
   getSuggestions() {
-    axios.get('/suggestions', {
+    axios.get('http://localhost:4001/suggestions', {
         params: {
           id: this.state.id,
           category: this.state.category
@@ -58,4 +58,5 @@ class App extends React.Component {
   }
 }
 
+window.Suggestions = App;
 ReactDOM.render(<App />, document.getElementById('app'));
