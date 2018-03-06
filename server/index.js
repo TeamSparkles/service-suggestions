@@ -9,6 +9,7 @@ const app = express();
 
 mongoose.connect('mongodb://localhost/meetup_suggestions');
 
+app.use(express.static(path.join(__dirname, '/../client/dist')));
 app.use('/event/:eventid/suggestions', express.static(path.join(__dirname, '/../client/dist')));
 app.use(bodyParser.json());
 
