@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  suggestions:
+    build: ''
+    depends_on:
+      - 'database'
+    ports: 
+      - '4001:4001'
+
+  database:
+    image: mongo:latest
+
+
+
+# version: "3"
+# services:
+#   description:
+#     container_name: app
+#     restart: always
+#     build: .
+#     ports:
+#       - "4000:4000"
+#     links:
+#       - mongo
+#   mongo:
+#     container_name: mongo
+#     image: mongo
+#     volumes:
+#       - ./data:/data/db
+#     ports:
+#       - "27017:27017"
