@@ -20,7 +20,7 @@ app.use('/event/:eventid/suggestions', express.static(path.join(__dirname, '/../
 app.use(bodyParser.json());
 
 
-app.get('/api/event/:eventid', (req, res) => {
+app.get('/api/:eventid/suggestions', (req, res) => {
   const eventId = `${req.params.eventid}`;
   Model.Suggestions.findOne({ id: eventId })
     .select('category -_id')
@@ -32,13 +32,15 @@ app.get('/api/event/:eventid', (req, res) => {
 app.get('/suggestions', (req, res) => {
   const category = `${req.query.category}`;
   const id = `${req.query.id}`;
-  Model.Suggestions.find({ category: category, id: {$ne: id} })
-    .select('-_id')
-    .limit(8)
-    .then((data) => {
+  Model.Suggestions.aggregate([
+    {$match: { category: category, id: {$ne: id} }},
+    {$sample: {size: 8}}
+  ])
+  .then((data) => {
       res.send(data);
-    });
+  });
 });
+
 
 
 module.exports = app;
