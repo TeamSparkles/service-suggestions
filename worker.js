@@ -37,8 +37,11 @@ output.forEach((entry) => {
   singleEntry.save((err) => {
     if (err) {
       console.log('ERROR', err);
+      if (counter === 0) {
+        mongoose.disconnect();
+      }
     } else {
-      console.log('added one entry in the database');
+      console.log('added one entry in the database: ' + entry.id);
       if (counter === 0) {
         mongoose.disconnect();
       }

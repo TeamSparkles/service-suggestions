@@ -13,7 +13,8 @@
     "dev-start": "nodemon server/server.js",
     "seed": "node worker.js",
     "lint": "eslint . --ext .js,.jsx",
-    "test": "jest"
+    "test": "jest",
+    "docker": "npm run seed && npm start"
   },
   "dependencies": {
     "axios": "^0.18.0",

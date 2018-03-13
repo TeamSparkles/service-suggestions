@@ -20,7 +20,7 @@ app.use('/event/:eventid/suggestions', express.static(path.join(__dirname, '/../
 app.use(bodyParser.json());
 
 
-app.get('/api/event/:eventid', (req, res) => {
+app.get('/api/:eventid/suggestions', (req, res) => {
   const eventId = `${req.params.eventid}`;
   Model.Suggestions.findOne({ id: eventId })
     .select('category -_id')

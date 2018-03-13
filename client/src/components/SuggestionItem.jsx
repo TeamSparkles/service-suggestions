@@ -8,8 +8,8 @@ class SuggestionItem extends React.Component {
 
   handleClick() {
     var clickedID = this.props.event.id;
-    console.log('http://proxy_server_ip_address' + clickedID)
-    // window.location.href = 'http://localhost:5555/event/' + clickedID;
+    //window.location.href = 'http://' + window.location.host + '/event/' + clickedID;
+    console.log('http://' + window.location.host + '/event/' + clickedID);
   }
 
   render() {
